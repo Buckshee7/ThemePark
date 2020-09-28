@@ -43,4 +43,5 @@ public class TobaccoStallTest {
     public void cantBuyIf17(){
         assertEquals(false, this.tobaccoStall.isAllowedTo(youngVisitor));
     }
+
 }
