@@ -1,5 +1,6 @@
 package people;
 
+import attractions.Dodgems;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,5 +28,17 @@ public class VisitorTest {
     @Test
     public void hasMoney() {
         assertEquals(40.0, visitor.getMoney(), 0.1);
+    }
+
+    @Test
+    public void hasListOfVisitedAttractions(){
+        assertEquals(0, this.visitor.getVisitedAttractions().size());
+    }
+
+    @Test
+    public void canAddVisitedAttraction(){
+        Dodgems dodgems = new Dodgems("Bumper Cars", 5);
+        visitor.addAttraction(dodgems);
+        assertEquals(1, this.visitor.getVisitedAttractions().size());
     }
 }
